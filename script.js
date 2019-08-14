@@ -106,6 +106,54 @@ console.log(jessica)
 
 // --------- LIGHTNING EXERCISE --------------------------------//
 // Build an object called tacoShopStaff
+const jacob = {
+    startDate: "8/15/19",
+    favoriteTaco: "Beef Taco"
+}
+const kelli = {
+    startDate: "8/15/19",
+    favoriteTaco: "Shrimp Taco"
+}
+const tacoTruckStaff = {
+    location: "123 Sesame Street",
+    openHours: "12-10",
+    menu: [nachos, chickenTaco],
+    // employees: [jessica, jacob, kelli]
+    employees: [
+        {
+            startDate: "8/15/19",
+            favoriteTaco: "Beef Taco"
+        },
+        {
+            startDate: "8/15/19",
+            favoriteTaco: "Shrimp Taco"
+        }
+    ],
+    hireEmployee: function(newEmployee){
+       this.employees.push(newEmployee)
+    },
+    fireEveryone: function(){
+        this.employees = []
+    }
+}
+
+// console.log("before hiring Jennifer", tacoTruckStaff)
+// const jennifer = {
+//     name: "Jennifer",
+//     startDate: "whenever",
+//     favoriteTaco: "veggie"
+// }
+// tacoTruckStaff.hireEmployee(jennifer)
+
+tacoTruckStaff.hireEmployee({
+    name: "Jennifer",
+    startDate: "whenever",
+    favoriteTaco: "veggie"
+})
+// console.log("after hiring Jennifer", tacoTruckStaff.employees)
+
+tacoTruckStaff.fireEveryone()
+console.log(tacoTruckStaff)
 
 // One of its properties should be called employees. This property should hold an array. Store the employee objects you created in the previous lightning exercise in this array.
 
@@ -123,26 +171,87 @@ console.log(jessica)
 // Create two p elements and give them each a class of "body-text"
 
 
+
+
+
+
+
 // Use document.querySelector a reference to the h1 element using its tag name
 // Get the same element by its id
 
-// Give it some different .innerHTML
+// document.querySelector("h1")
+const heading = document.querySelector("#heading")
+console.log(heading)
+heading.textContent = "Boogers"
+heading.classList.add("red-text")
+
+
+
+
+
+// Give it some text with .textContent
 
 // Use .classList.add() to add a class
-
-
 
 // ------------------- Lightning Exercise Two ------------------//
 // Create a JavaScript file and link it to your index.html file.
 // Use document.querySelector to get a reference to the element with an id of "main-header"
+
+const mainHeader = document.querySelector("#main-header")
 // Log the reference to the console
+console.log(mainHeader)
+
+// console.log(document.querySelector("#main-header"))
 // Add a class of "blue-text" to the element
 
+// mainHeader.classList.add("blue-text")
+// mainHeader.textContent = "I should be blue!"
 
+const htmlString = `<h1 class="red-text">My awesome blog</h1>
+<h2 class="blue-text">By Me</h2>`
+
+mainHeader.innerHTML = htmlString
+
+
+
+const menuItems = document.querySelectorAll(".menu-item")
+console.log("this is menu items", menuItems)
+
+// menuItems.classList.add("blue-background")
+
+for(var i = 0; i < menuItems.length; i++){
+    menuItems[i].classList.add("blue-background")
+    console.log(menuItems[i])
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// document.querySelector("#main-header").classList.add
 // Use .querySelectorAll to select all the menu items
 // Loop through each menu item and log them to the console
+
+
+
+
 
 //----------------------- Lightning Exercise Three---------------//
 // In your JavaScript file, use document.querySelectorAll to select all of the elements in your HTML file with a class of "body-text"
 // Log the reference to the console
 // Loop through the NodeList of elements and set the .innerHTML property of each element to "Hello, world!"
+
+const bodyTextParagraphs = document.querySelectorAll(".body-text")
+console.log("this is body text paras", bodyTextParagraphs)
+
+for(let i = 0; i< bodyTextParagraphs.length; i++){
+    console.log(bodyTextParagraphs[i])
+    bodyTextParagraphs[i].innerHTML = "Hello, world!"
+}

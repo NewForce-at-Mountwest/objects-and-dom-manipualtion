@@ -1,0 +1,20 @@
+/* #heading{
+    color: red
+}
+
+h1{
+    font-size: 10em
+} */
+
+.red-text{
+    color: red
+}
+
+ .blue-text{
+    color: blue
+}
+
+.blue-background{
+    background-color: blue;
+    margin: 1em;
+}
